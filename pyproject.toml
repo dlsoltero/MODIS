@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modis"
+version = "0.0.1"
+dependencies = [
+    "numpy",
+    "torch",
+    "omegaconf",
+    "hydra-core",
+    "matplotlib",
+    "pandas",
+    "umap"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
