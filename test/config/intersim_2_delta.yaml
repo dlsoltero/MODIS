@@ -1,0 +1,31 @@
+dataset_name: intersim_2_delta
+model_name: intersim
+
+# Model params
+latent_size: 64
+modalities:
+  - name: dna_methyl
+    input_size: 367
+    hidden_size: 512
+  - name: gene_expr
+    input_size: 131
+    hidden_size: 256
+  - name: protein_exp
+    input_size: 160
+    hidden_size: 256
+
+# Training hyperparameters
+resume: False
+training_mode: semisupervised  # semisupervised or supervised
+num_classes: 5
+batch_size: 32
+
+num_epochs: 30
+vaes_lr: 1e-4
+discriminator_lr: 1e-4
+beta: 5e-4
+
+# Other
+device: auto
+checkpoint_folder: './saved/checkpoints'
+save_best_model: True
